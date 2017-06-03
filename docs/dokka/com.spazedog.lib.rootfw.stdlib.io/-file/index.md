@@ -1,0 +1,61 @@
+[com.spazedog.lib.rootfw.stdlib.io](../index.md) / [File](.)
+
+# File
+
+`class File`
+
+Extended version of `java.io.File` (Not a member) with additional tools
+and ability to use `root` as fallback to force access to any file/directory
+
+### Types
+
+| Name | Summary |
+|---|---|
+| [FileData](-file-data/index.md) | `class FileData` |
+| [FileStat](-file-stat/index.md) | `data class FileStat` |
+| [Type](-type/index.md) | `enum class Type`<ul><li></li></ul> |
+
+### Constructors
+
+| Name | Summary |
+|---|---|
+| [&lt;init&gt;](-init-.md) | `File(shell: <ERROR CLASS>, filePath: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`)``File(shell: <ERROR CLASS>, file: `[`File`](http://docs.oracle.com/javase/6/docs/api/java/io/File.html)`)`<br>Extended version of `java.io.File` (Not a member) with additional tools and ability to use `root` as fallback to force access to any file/directory |
+
+### Functions
+
+| Name | Summary |
+|---|---|
+| [changeAccess](change-access.md) | `fun changeAccess(user: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`?, group: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`?, mod: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>`fun changeAccess(user: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`?, group: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`?, mod: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, recursive: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>`fun changeAccess(user: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, group: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, mod: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>`fun changeAccess(user: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, group: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, mod: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, recursive: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Change ownership (user and group) and permissions on a file or directory. |
+| [copy](copy.md) | `fun copy(destPath: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, overwrite: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`, preservePerms: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)` = false): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Copy the file to another location |
+| [createDirectory](create-directory.md) | `fun createDirectory(parents: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)` = false): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Create a new directory based on the path from this file object |
+| [createLink](create-link.md) | `fun createLink(linkPath: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Create a link to this file |
+| [exists](exists.md) | `fun exists(): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Check whether or not a file exists |
+| [extractResource](extract-resource.md) | `fun extractResource(context: <ERROR CLASS>, asset: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Extract data from an Android Assets Path (files located in /assets/) and add it to the current file location. If the file already exist, it will be overwritten. Otherwise the file will be created.`fun extractResource(context: <ERROR CLASS>, resourceid: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Extract data from an Android resource id (files located in /res/) and add it to the current file location. If the file already exist, it will be overwritten. Otherwise the file will be created.`fun extractResource(resource: `[`InputStream`](http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html)`): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Extract data from an InputStream and add it to the current file location. If the file already exist, it will be overwritten. Otherwise the file will be created. |
+| [getAbsolutePath](get-absolute-path.md) | `fun getAbsolutePath(): `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>Returns the absolute path. An absolute path is a path that starts at a root of the file system |
+| [getCanonicalFile](get-canonical-file.md) | `fun getCanonicalFile(): File`<br>Return a new File object using a resolved path |
+| [getCanonicalPath](get-canonical-path.md) | `fun getCanonicalPath(): `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>Resolve the path if this is a link and return the path of the original file |
+| [getDetailedListing](get-detailed-listing.md) | `fun getDetailedListing(maxLines: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)` = 0): `[`Array`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html)`<`[`FileStat`](-file-stat/index.md)`>`<br>This is the same as [getDetails](get-details.md), only this will provide a whole list with information about each item in a directory. |
+| [getDetails](get-details.md) | `fun getDetails(): `[`FileStat`](-file-stat/index.md)<br>Get information about this file or folder. This will return information like size (on files), path to linked file (on links), permissions, group, user etc... |
+| [getFileReader](get-file-reader.md) | `fun getFileReader(): `[`FileReader`](../-file-reader/index.md)<br>Get a new [FileReader](../-file-reader/index.md) pointing at this file |
+| [getFileWriter](get-file-writer.md) | `fun getFileWriter(append: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)` = false): `[`FileWriter`](../-file-writer/index.md)<br>Get a new [FileWriter](../-file-writer/index.md) pointing at this file |
+| [getListing](get-listing.md) | `fun getListing(): `[`Array`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html)`<`[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`>`<br>This will provide a simple listing of a directory |
+| [getName](get-name.md) | `fun getName(): `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>The name of this file |
+| [getParentFile](get-parent-file.md) | `fun getParentFile(): File`<br>Return a new File object using the parent path |
+| [getParentPath](get-parent-path.md) | `fun getParentPath(): `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>Returns the parent path. Note that on folders, this means the parent folder. However, on files, it will return the folder path that the file resides in. |
+| [getPath](get-path.md) | `fun getPath(): `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>Returns the path used to create this object |
+| [getResolvedPath](get-resolved-path.md) | `fun getResolvedPath(): `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>Get a real absolute path |
+| [getSize](get-size.md) | `fun getSize(): `[`Long`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)<br>Calculates the size of a file or folder |
+| [isBlockDevice](is-block-device.md) | `fun isBlockDevice(): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Check whether or not this file is a block device, if it exists |
+| [isCharacterDevice](is-character-device.md) | `fun isCharacterDevice(): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Check whether or not this file is a character device, if it exists |
+| [isDirectory](is-directory.md) | `fun isDirectory(): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Check whether or not this file is a directory, if it exists |
+| [isFile](is-file.md) | `fun isFile(): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Check whether or not this file is an actual file, if it exists |
+| [isLink](is-link.md) | `fun isLink(): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Check whether or not this file is a symbolic link, if it exists |
+| [isType](is-type.md) | `fun isType(type: `[`Type`](-type/index.md)`): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Check whether or not this file is of the type [Type](-type/index.md), if it exists |
+| [move](move.md) | `fun move(destPath: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, overwrite: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)` = false): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Move the file to another location |
+| [newFile](new-file.md) | `fun newFile(path: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): File`<br>`fun newFile(file: `[`File`](http://docs.oracle.com/javase/6/docs/api/java/io/File.html)`): File`<br>Create a new instance of this class that points to a different file |
+| [read](read.md) | `fun read(): `[`FileData`](-file-data/index.md)<br>Extract the content from the file and return it. |
+| [readOneLine](read-one-line.md) | `fun readOneLine(): `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`?`<br>Extract the first line of the file |
+| [remove](remove.md) | `fun remove(): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Remove the file |
+| [run](run.md) | `fun run(): <ERROR CLASS>`<br>Make this file executable and run it in the shell |
+| [setForcedShell](set-forced-shell.md) | `fun setForcedShell(flag: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Force the shell to be used on all operations |
+| [write](write.md) | `fun write(line: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, append: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)` = false): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Write a string to the file`fun write(data: <ERROR CLASS><out <ERROR CLASS>>, append: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)` = false): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Write a member of [Data](#) to the file`fun write(lines: `[`Array`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html)`<`[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`>, append: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)` = false): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Write an array of data to the file, each entry is treated as a line |

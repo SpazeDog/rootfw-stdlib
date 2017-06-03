@@ -1,0 +1,5 @@
+$dokka.format:gfm
+$dokka.linkExtension:md
+
+com.spazedog.lib.rootfw.stdlib.android
+com.spazedog.lib.rootfw.stdlib.io

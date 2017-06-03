@@ -1,0 +1,20 @@
+Rules for Anycall dir
+---------------------
+
+The directory `asset/Anycall/` stores the binaries used by the `SystemService` class within this library.
+
+The root of the anycall dir, should be sub-folders containing binaries for different SDK/API's.
+
+Each folder in Anycall/ should be named with it's binaries minimum SDK. F.eks Anycall/23/ is for all devices running SDK 23 or above. If we add Anycall/25/, then every device running SDK 25 or above will select this and 23 will be used for SDK 23 and SDK 24.
+
+Each of the SDK named sub-folder should contain a sub-folder for every ABI supported. F.eks. support for Arm should be placed in Anycall/<sdk>/arm/ or Anycall/<sdk>/armeabi/, Anycall/<sdk>/armeabi-v7a/ etc. Or for specific 64bit like Anycall/<sdk>/arm64/, Anycall/<sdk>/armeabi-v8a/ or others like Anycall/<sdk>/x86_64/. The selected binary is based on what's supported against what's available.
+
+Inside the Anycall/<sdk>/<abi>/ should be the actual binary called 'anycall' and another file called 'anycall.md5'. The md5 file should contain the md5 sum of the anycall binary, which is used to update any installed version when a packed version is updated.
+
+---------------------------------------------------------------
+
+Do NOT add any binaries build from the original source. It's not compatible with the front-end class used by this library and will block any shell process trying to access it. It MUST be build from modified source that can be found at 'https://github.com/dk-zero-cool/anycall-native'
+
+---------------------------------------------------------------
+
+The package `rootfw-stdlib-anycall` is an extension package for this library that packs pre-built binaries from the customized anycall source. Separating the binaries from the library saves a lot of space for people not using the SystemService class, but still want's the rest of the library features.
